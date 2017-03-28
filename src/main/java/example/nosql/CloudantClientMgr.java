@@ -40,7 +40,8 @@ public class CloudantClientMgr {
 
 		if (VCAP_SERVICES != null) {
 			// When running in Bluemix, the VCAP_SERVICES env var will have the credentials for all bound/connected services
-			// Parse the VCAP JSON structure looking for cloudant.1
+			// Parse the VCAP JSON structure looking for cloudant.
+			//--------------------
 			JsonObject obj = (JsonObject) new JsonParser().parse(VCAP_SERVICES);
 			Entry<String, JsonElement> dbEntry = null;
 			Set<Entry<String, JsonElement>> entries = obj.entrySet();
